@@ -1,0 +1,317 @@
+/* Handshake Animation Styles */
+/* CSS custom properties for easy configuration */
+:root {
+  --shake-amplitude: 20px;
+  --shake-duration: 0.8s;
+  --handshake-z-index: 10;
+  --transition-duration: 0.3s;
+}
+
+/* Basic layout for the handshake container */
+.handshake-container {
+  position: relative;
+  width: 100%;
+  min-height: 400px;
+  overflow: visible;
+  z-index: var(--handshake-z-index);
+  pointer-events: none; /* Allow clicks to pass through */
+}
+
+/* Hand positioning and styling */
+#left-hand, 
+#right-hand {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  max-width: 300px;
+  height: auto;
+  z-index: var(--handshake-z-index);
+  transition: opacity var(--transition-duration) ease;
+}
+
+#left-hand {
+  left: 0;
+  transform-origin: center right;
+}
+
+#right-hand {
+  right: 0;
+  transform-origin: center left;
+}
+
+/* Fallback placeholder hands (emoji) */
+.handshake-fallback {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  transform: translateY(-50%);
+  pointer-events: none;
+  z-index: var(--handshake-z-index);
+}
+
+.hand-placeholder {
+  position: absolute;
+  font-size: 4rem;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0.7;
+  transition: all 0.3s ease;
+}
+
+.left-placeholder {
+  left: 5%;
+}
+
+.right-placeholder {
+  right: 5%;
+}
+
+/* Show fallback only when images fail to load */
+#left-hand:not([style*="display: none"]) ~ .handshake-fallback,
+#right-hand:not([style*="display: none"]) ~ .handshake-fallback {
+  display: none;
+}
+
+/* Keyframes for the handshake shaking motion */
+@keyframes shakeHands {
+  0%, 100% { 
+    transform: translateY(-50%) translateX(0) rotate(0deg);
+  }
+  25% { 
+    transform: translateY(-50%) translateX(0) translateY(calc(-50% - var(--shake-amplitude))) rotate(-2deg);
+  }
+  75% { 
+    transform: translateY(-50%) translateX(0) translateY(calc(-50% + var(--shake-amplitude))) rotate(2deg);
+  }
+}
+
+@keyframes shakeHandsPlaceholder {
+  0%, 100% { 
+    transform: translateY(-50%) translateX(0);
+  }
+  25% { 
+    transform: translateY(-50%) translateX(0) translateY(calc(-50% - var(--shake-amplitude)));
+  }
+  75% { 
+    transform: translateY(-50%) translateX(0) translateY(calc(-50% + var(--shake-amplitude)));
+  }
+}
+
+/* Class to trigger the shaking animation */
+.handshake-container.shaking #left-hand,
+.handshake-container.shaking #right-hand {
+  animation: shakeHands var(--shake-duration) ease-in-out infinite;
+}
+
+.handshake-container.shaking .hand-placeholder {
+  animation: shakeHandsPlaceholder var(--shake-duration) ease-in-out infinite;
+}
+
+/* Responsive design adjustments */
+@media (max-width: 768px) {
+  .handshake-container {
+    min-height: 300px;
+  }
+  
+  #left-hand, 
+  #right-hand {
+    max-width: 200px;
+  }
+  
+  .hand-placeholder {
+    font-size: 3rem;
+  }
+  
+  :root {
+    --shake-amplitude: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .handshake-container {
+    min-height: 250px;
+  }
+  
+  #left-hand, 
+  #right-hand {
+    max-width: 150px;
+  }
+  
+  .hand-placeholder {
+    font-size: 2.5rem;
+  }
+  
+  :root {
+    --shake-amplitude: 10px;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .hand-placeholder {
+    filter: contrast(2);
+  }
+}
+
+/* Reduced motion accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .handshake-container.shaking #left-hand,
+  .handshake-container.shaking #right-hand,
+  .handshake-container.shaking .hand-placeholder {
+    animation: none !important;
+  }
+  
+  /* Instead of shaking, just show a subtle pulse */
+  .handshake-container.shaking #left-hand,
+  .handshake-container.shaking #right-hand {
+    animation: gentlePulse 2s ease-in-out infinite;
+  }
+  
+  .handshake-container.shaking .hand-placeholder {
+    animation: gentlePulse 2s ease-in-out infinite;
+  }
+}
+
+@keyframes gentlePulse {
+  0%, 100% { 
+    opacity: 1;
+    transform: translateY(-50%) scale(1);
+  }
+  50% { 
+    opacity: 0.8;
+    transform: translateY(-50%) scale(1.05);
+  }
+}
+
+/* Performance optimizations */
+.handshake-container,
+#left-hand,
+#right-hand,
+.hand-placeholder {
+  will-change: transform;
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+/* Ensure smooth transforms */
+#left-hand,
+#right-hand {
+  transform-style: preserve-3d;
+}
+
+/* Additional visual enhancements */
+.handshake-container::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100px;
+  height: 100px;
+  background: radial-gradient(circle, rgba(66, 111, 196, 0.1) 0%, transparent 70%);
+  border-radius: 50%;
+  opacity: 0;
+  transition: opacity var(--transition-duration) ease;
+  pointer-events: none;
+}
+
+.handshake-container.shaking::before {
+  opacity: 1;
+}
+
+/* Loading states */
+#left-hand,
+#right-hand {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+#left-hand.loaded,
+#right-hand.loaded {
+  opacity: 1;
+}
+
+/* Focus indicators for accessibility */
+.handshake-container:focus-within {
+  outline: 2px solid #426fc4;
+  outline-offset: 4px;
+}
+
+/* Print styles */
+@media print {
+  .handshake-container {
+    display: none;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .handshake-container::before {
+    background: radial-gradient(circle, rgba(66, 111, 196, 0.2) 0%, transparent 70%);
+  }
+}
+
+/* Custom scrollbar for demo page */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #426fc4;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #2d5aa0;
+}
+
+/* Utility classes for integration */
+.handshake-overlay {
+  position: relative;
+  z-index: var(--handshake-z-index);
+}
+
+.handshake-background {
+  z-index: calc(var(--handshake-z-index) - 1);
+}
+
+.handshake-foreground {
+  z-index: calc(var(--handshake-z-index) + 1);
+}
+
+/* Animation variants */
+.handshake-container.gentle-shake {
+  --shake-amplitude: 10px;
+  --shake-duration: 1.2s;
+}
+
+.handshake-container.vigorous-shake {
+  --shake-amplitude: 30px;
+  --shake-duration: 0.5s;
+}
+
+.handshake-container.slow-shake {
+  --shake-amplitude: 15px;
+  --shake-duration: 1.5s;
+}
+
+/* Debug mode */
+.handshake-debug .handshake-container {
+  border: 2px dashed #426fc4;
+  background: rgba(66, 111, 196, 0.05);
+}
+
+.handshake-debug #left-hand,
+.handshake-debug #right-hand {
+  border: 1px solid red;
+}
+
+.handshake-debug .hand-placeholder {
+  border: 1px solid blue;
+}

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parallax Handshake Animation - MJ Direct Placement Services</title>
+    <link href="css/parallax-handshake.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Fixed positioned hands for parallax effect -->
+    <div id="handshake-layer">
+        <img src="images/left-hand.png" id="left-hand" alt="Left hand reaching out" class="hand">
+        <img src="images/right-hand.png" id="right-hand" alt="Right hand reaching out" class="hand">
+        <img src="images/handshake.png" id="handshake-complete" alt="Completed handshake" class="handshake-final">
+    </div>
+
+    <!-- Page sections -->
+    <header class="hero-section" id="section-1">
+        <div class="content">
+            <h1>MJ Direct Placement Services</h1>
+            <h2>Connecting Talent with Opportunity</h2>
+            <p>Scroll down to see how we bring people together</p>
+            <div class="scroll-indicator">↓</div>
+        </div>
+    </header>
+
+    <section class="main-content" id="section-2">
+        <div class="content-block">
+            <h2>Expert Recruitment Solutions</h2>
+            <p>We specialize in finding the perfect match between employers and candidates. Our experienced team understands the nuances of talent acquisition and placement.</p>
+            
+            <div class="features-grid">
+                <div class="feature">
+                    <h3>🎯 Targeted Matching</h3>
+                    <p>Precision recruitment based on skills, culture fit, and career goals</p>
+                </div>
+                <div class="feature">
+                    <h3>⚡ Quick Placement</h3>
+                    <p>Streamlined process to reduce time-to-hire</p>
+                </div>
+                <div class="feature">
+                    <h3>🤝 Long-term Success</h3>
+                    <p>Building relationships that last beyond placement</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section middle-cta" id="section-3">
+        <div class="content">
+            <h2>Ready to Make Connections?</h2>
+            <p>Let us help you find the perfect match</p>
+            <button class="cta-button">Get Started Today</button>
+        </div>
+    </section>
+
+    <section class="services-content" id="section-4">
+        <div class="content-block">
+            <h2>Our Services</h2>
+            <div class="services-list">
+                <div class="service">
+                    <h3>For Employers</h3>
+                    <ul>
+                        <li>Executive Search</li>
+                        <li>Direct Placement</li>
+                        <li>Talent Assessment</li>
+                        <li>Market Analysis</li>
+                    </ul>
+                </div>
+                <div class="service">
+                    <h3>For Candidates</h3>
+                    <ul>
+                        <li>Career Consultation</li>
+                        <li>Resume Optimization</li>
+                        <li>Interview Preparation</li>
+                        <li>Salary Negotiation</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="final-cta" id="section-5">
+        <div class="content">
+            <h2>Let's Shake on It!</h2>
+            <p>Ready to start your journey? We're here to make the connection happen.</p>
+            <div class="contact-info">
+                <button class="cta-button primary">Contact Us Now</button>
+                <p>Call: (555) 123-4567 | Email: info@mjdirectplacement.com</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Debug panel (removable) -->
+    <div id="debug-panel">
+        <h4>Animation Debug</h4>
+        <div>Section: <span id="current-section">1</span></div>
+        <div>Scroll: <span id="scroll-progress">0%</span></div>
+        <div>Left Hand: <span id="left-position">0px</span></div>
+        <div>Right Hand: <span id="right-position">0px</span></div>
+        <div>State: <span id="animation-state">approaching</span></div>
+    </div>
+
+    <script src="js/parallax-handshake.js"></script>
+</body>
+</html>
