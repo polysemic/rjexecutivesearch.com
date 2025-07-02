@@ -43,7 +43,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
     if (empty($errors)) {
         // Email settings
-        $to = "info@mjdirectplacementsrvs.com";
+        $to = "info@rjexecutivesearch.com";
         $subject = "Contact Form Submission from " . $name;
         
         $email_body = "New contact form submission:\n\n";
