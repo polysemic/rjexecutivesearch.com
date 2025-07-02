@@ -18,6 +18,21 @@
 
   <link rel="canonical" href="index.html" />
 
+  <!-- Add this block for mjdps font support -->
+    <style>
+      @font-face {
+        font-family: 'mjdps';
+        src: url('assets/fonts/mjdps.woff2') format('woff2'),
+             url('assets/fonts/mjdps.woff') format('woff'),
+             url('assets/fonts/mjdps.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+      }
+      /* Example usage: */
+      .mjdps-font, .icon-mjdps { font-family: 'mjdps', sans-serif !important; }
+    </style>
+
   </head>
 <body>
     <header>
