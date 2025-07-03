@@ -44,15 +44,21 @@
     </header>
     <script>
     // Hamburger menu toggle
-    document.addEventListener('DOMContentLoaded', function() {
-      var toggle = document.querySelector('.navbar-toggle');
-      var menu = document.getElementById('navbar-menu');
-      toggle.addEventListener('click', function() {
-        menu.classList.toggle('open');
-        var expanded = toggle.getAttribute('aria-expanded') === 'true';
-        toggle.setAttribute('aria-expanded', !expanded);
-      });
-    });
+document.addEventListener('DOMContentLoaded', function() {
+  var toggle = document.querySelector('.navbar-toggle');
+  var menu = document.getElementById('navbar-menu');
+  toggle.addEventListener('click', function() {
+    menu.classList.toggle('open');
+    var expanded = toggle.getAttribute('aria-expanded') === 'true';
+    toggle.setAttribute('aria-expanded', !expanded);
+    // Prevent body horizontal scroll when menu is open
+    if(menu.classList.contains('open')) {
+      document.body.classList.add('menu-open');
+    } else {
+      document.body.classList.remove('menu-open');
+    }
+  });
+});
     // Logo shrink on scroll
     window.addEventListener('scroll', function() {
       var header = document.querySelector('header');

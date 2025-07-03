@@ -39,7 +39,7 @@ header {
 }
 
 .navbar-logo img {
-  height: 80px;
+  height: 123px;
   width: auto;
   transition: all 0.3s cubic-bezier(.4,0,.2,1);
 }
@@ -65,11 +65,6 @@ header {
   position: sticky;
   top: 0;
   z-index: 1000;
-}
-
-.navbar-logo img {
-  height: 48px;
-  width: auto;
 }
 
 .navbar-menu {
@@ -125,7 +120,8 @@ header {
   .navbar-logo {
     margin: 0;
     justify-content: flex-start;
-    flex: 1 1 auto;
+    width: auto;
+    display: inline-flex;
   }
   .navbar-logo img {
     height: 48px;
@@ -135,13 +131,15 @@ header {
     flex-direction: column;
     position: absolute;
     top: 100%;
-    right: 0;
     left: 0;
-    min-width: 200px;
+    width: 100vw;
+    min-width: 0;
     background: #fff;
     box-shadow: 0 2px 8px rgba(0,0,0,0.08);
     margin: 0;
     border-radius: 0 0 8px 8px;
+    box-sizing: border-box;
+    z-index: 2000;
   }
   .navbar-menu.open {
     display: flex;
@@ -149,6 +147,10 @@ header {
   .navbar-toggle {
     display: block;
   }
+}
+
+body.menu-open {
+  overflow-x: hidden;
 }
 
 /* Sticky + logo shrink on scroll (JS class: .scrolled) */
