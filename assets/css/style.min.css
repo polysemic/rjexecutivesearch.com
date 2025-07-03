@@ -10,7 +10,6 @@
   font-family: "mjdps";
   font-style: normal;
   font-weight: 400;
-  speak: none;
   display: inline-block;
   text-decoration: inherit;
   font-variant: normal;
@@ -888,6 +887,7 @@ nav li {
   -webkit-transition: all 0.32s;
   transition: all 0.32s;
   -webkit-opacity: 1;
+  opacity: 1;
   z-index: 10;
   position: relative;
   width: 100%;

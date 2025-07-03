@@ -8,8 +8,10 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="assets/css/style.min.css" rel="stylesheet">
+    <!-- Bootstrap and old stylesheets commented out for navbar migration -->
+    <!-- <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet"> -->
+    <!-- <link href="assets/css/style.min.css" rel="stylesheet"> -->
+    <link href="assets/css/site.css" rel="stylesheet">
     <link href="assets/slider/css/hero-slider.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans%7CRaleway" rel="stylesheet">
     
@@ -21,42 +23,25 @@
   </head>
   <body>
     <header>
-          <div class="col-sm-12 hidden-xs"><a href="index.html"><img src="assets/images/rj-executive-search-logo.jpg" alt="RJ Executive Search Logo" class="img-responsive header-logo"></a></div>
-          <nav class="navbar">
-            <div class="navbar-header">
-              <button type="button" class="navbar-toggle" data-apply="bs-example-navbar-collapse-1">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
-              <a class="navbar-brand visible-xs" href="index.html"><img src="assets/images/rj-executive-search-logo.jpg" alt="RJ Executive Search Logo" class="img-responsive"></a>
-            </div>
-          
-          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav">
-              <li class="hidden-xs"><a href="index.html">Home</a></li>
-              <li class="hidden-xs"><a href="who-we-are/">Who We Are</a></li>
-              <li class="hidden-xs"><a href="recruiting-process/">Recruiting Process</a></li>
-              <li class="hidden-xs"><a href="why-hire-recruiting-firm/">Why Hire a Recruiting Firm</a></li>
-              <li class="hidden-xs"><a href="business-coaching/">Business Coaching</a></li>
-              <li class="hidden-xs"><a href="our-assessments/">Our Assessments</a></li>
-              <li class="hidden-xs"><a href="success-stories/">Success Stories</a></li>
-              <li class="hidden-xs"><a href="contact-us/">Contact Us</a></li>
-              
-              <!-- Mobile -->
-              <li class="visible-xs"><a href="index.html">Home</a></li>
-              <li class="visible-xs"><a href="who-we-are/">Who We Are</a></li>
-              <li class="visible-xs"><a href="recruiting-process/">Recruiting Process</a></li>
-              <li class="visible-xs"><a href="why-hire-recruiting-firm/">Why Hire a Recruiting Firm</a></li>
-              <li class="visible-xs"><a href="business-coaching/">Business Coaching</a></li>
-              <li class="visible-xs"><a href="our-assessments/">Our Assessments</a></li>
-              <li class="visible-xs"><a href="success-stories/">Success Stories</a></li>
-              <li class="visible-xs"><a href="contact-us/">Contact Us</a></li>
-            </ul>
-          </div><!-- /.nav-collapse -->
-          </nav>
-  </header>
+      <nav class="navbar">
+        <a href="index.html" class="navbar-logo">
+          <img src="assets/images/rj-executive-search-logo.jpg" alt="RJ Executive Search Logo">
+        </a>
+        <button class="navbar-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="navbar-menu">
+          &#9776;
+        </button>
+        <ul class="navbar-menu" id="navbar-menu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="who-we-are/">Who We Are</a></li>
+          <li><a href="recruiting-process/">Recruiting Process</a></li>
+          <li><a href="why-hire-recruiting-firm/">Why Hire a Recruiting Firm</a></li>
+          <li><a href="business-coaching/">Business Coaching</a></li>
+          <li><a href="our-assessments/">Our Assessments</a></li>
+          <li><a href="success-stories/">Success Stories</a></li>
+          <li><a href="contact-us/">Contact Us</a></li>
+        </ul>
+      </nav>
+    </header>
       <!--slider start-->
         <div class="hero-slider" tabindex="0" role="region" aria-label="Hero Image Carousel">
           <div class="hero-slider-container">
