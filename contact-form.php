@@ -28,8 +28,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
     if (empty($errors)) {
         // Email settings
-        $to = "info@rjexecutivesearch.com";
-        $client = "client@email.com"; // <-- Replace with actual client email
+        $to = "ericchaffey@gmail.com";
+        $client = "ericchaffey@gmail.com"; // <-- Replace with actual client email
         $subject = "Contact Form Submission from " . $name;
         
         $email_body = "New contact form submission:\n\n";
@@ -38,7 +38,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $email_body .= "Message: " . $message . "\n";
         $email_body .= "Submitted: " . date('Y-m-d H:i:s') . "\n";
         
-        $headers = "From: noreply@mjdirectplacementsrvs.com\r\n";
+        $headers = "From: ericchaffey@gmail.com\r\n";
         $headers .= "Reply-To: " . $contact_info . "\r\n";
         $headers .= "X-Mailer: PHP/" . phpversion();
         
