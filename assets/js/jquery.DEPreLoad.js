@@ -37,7 +37,9 @@
     };
 
     var loadImg = function(url) {
-        $(new Image()).load(loadComplete).error(loadComplete).attr('src', url);
+        var img = new Image();
+        $(img).on('load', loadComplete).on('error', loadComplete);
+        img.src = url;
     };
 
     $.fn.DEPreLoad = function(options) {

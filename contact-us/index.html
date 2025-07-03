@@ -166,7 +166,6 @@ $(document).ready(function() {
                 if (response.success) {
                     form.find('.success').show();
                     form[0].reset();
-                    grecaptcha.reset();
                 } else {
                     var errorHtml = 'Please correct the following errors:<ul>';
                     $.each(response.errors, function(index, error) {
