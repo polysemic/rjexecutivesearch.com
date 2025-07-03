@@ -678,6 +678,10 @@ nav li {
   margin: 0 auto;
   padding: 20px;
 }
+.mobile-logo {
+  margin: 0 auto;
+  height: 39px
+}
 .list-none {
   list-style: none;
   padding: 0;
