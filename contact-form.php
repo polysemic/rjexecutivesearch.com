@@ -26,24 +26,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $errors[] = "Spam detected";
     }
     
-    // Verify reCAPTCHA
-    if (isset($_POST['g-recaptcha-response'])) {
-        $recaptcha_secret = '6LeUeBIUAAAAANQd_zILxoKDCU06iwZv8d5EqMru'; // Replace with your secret key
-        $recaptcha_response = $_POST['g-recaptcha-response'];
-        
-        $verify_response = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret='.$recaptcha_secret.'&response='.$recaptcha_response);
-        $response_data = json_decode($verify_response);
-        
-        if (!$response_data->success) {
-            $errors[] = "Please complete the reCAPTCHA verification";
-        }
-    } else {
-        $errors[] = "Please complete the reCAPTCHA verification";
-    }
-    
     if (empty($errors)) {
         // Email settings
         $to = "info@rjexecutivesearch.com";
+        $client = "client@email.com"; // <-- Replace with actual client email
         $subject = "Contact Form Submission from " . $name;
         
         $email_body = "New contact form submission:\n\n";
@@ -56,7 +42,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $headers .= "Reply-To: " . $contact_info . "\r\n";
         $headers .= "X-Mailer: PHP/" . phpversion();
         
-        if (mail($to, $subject, $email_body, $headers)) {
+        $recipients = $to . "," . $client;
+        if (mail($recipients, $subject, $email_body, $headers)) {
             $success = "Thank you for your submission. We will contact you shortly.";
         } else {
             $errors[] = "There was an error sending your message. Please try again.";
