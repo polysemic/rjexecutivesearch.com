@@ -48,6 +48,7 @@ jQuery(function ($) {
         //     $(this).toggleClass('open');       
         // }
     // );
+    /*
     $(document).on('click', '.dropdown a',function() {
         if($(this).parent().hasClass('open')){
             $(this).next().hide().end().parent().siblings().find('.mega-dropdown-menu').slideUp("400");
@@ -112,7 +113,7 @@ jQuery(function ($) {
             }
         });
     });
-
+*/
 
 });
 
