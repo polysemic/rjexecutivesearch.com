@@ -119,53 +119,35 @@
                     <hr></div>
 
 <div id="formblock" class="formblock">
-<form id="contactForm" method="post" action="../contact-form.php">
-
-	<div class="success alert alert-success" style="display: none;">
-		Thank you for your submission. We will contact you shortly.
-	</div>
-	
-	<div class="errors alert alert-danger" style="display: none;">
-	</div>
-
-	<div class="fields">
-		<div class="field field-text">
-			<label for="name" class="visuallyhidden">
-				Full name
-				<span class="required">*</span>
-			</label>
-			<input name="name" placeholder="Full name *" id="name" type="text" value="" required />
-		</div>
-		
-		<div class="field field-text">
-			<label for="contact_info" class="visuallyhidden">
-				Phone Number or Email
-				<span class="required">*</span>
-			</label>
-			<input name="contact_info" placeholder="Phone Number or Email *" id="contact_info" type="text" value="" required />
-		</div>
-		
-		<div class="field field-textarea">
-			<label for="message" class="visuallyhidden">
-				Your Question
-				<span class="required">*</span>
-			</label>
-			<textarea name="message" placeholder="Your Question *" id="message" cols="50" rows="3" required></textarea>
-		</div>
-		<div class="field field-text hidden">
-			<label for="honeypot">Leave this field blank</label>
-			<input type="text" name="honeypot" />
-		</div>
-	</div><!-- .fields -->
-
-	<input type="submit" name="Submit" class="btn btn-primary submit" value="Submit" />
-
-	<div class="indicator" style="display: none;">
-		<span>Processing...</span>
-	</div>
-
-</form>
-</div><!-- .formblock -->
+  <form id="contactForm" method="post" action="../contact-form.php" novalidate>
+    <div class="success alert alert-success" style="display: none;">
+      Thank you for your submission. We will contact you shortly.
+    </div>
+    <div class="errors alert alert-danger" style="display: none;"></div>
+    <div class="fields">
+      <div class="field">
+        <label for="name">Full Name <span aria-hidden="true" class="required">*</span></label>
+        <input name="name" id="name" type="text" placeholder="Full name" required autocomplete="name" />
+      </div>
+      <div class="field">
+        <label for="contact_info">Phone Number or Email <span aria-hidden="true" class="required">*</span></label>
+        <input name="contact_info" id="contact_info" type="text" placeholder="Phone or Email" required autocomplete="email" />
+      </div>
+      <div class="field">
+        <label for="message">Your Question <span aria-hidden="true" class="required">*</span></label>
+        <textarea name="message" id="message" placeholder="Your Question" rows="4" required></textarea>
+      </div>
+      <div class="field hidden">
+        <label for="honeypot" class="visuallyhidden">Leave this field blank</label>
+        <input type="text" name="honeypot" id="honeypot" tabindex="-1" autocomplete="off" />
+      </div>
+    </div>
+    <button type="submit" class="btn submit">Send Message</button>
+    <div class="indicator" style="display: none;">
+      <span>Processing...</span>
+    </div>
+  </form>
+</div>
 
 <script>
 $(document).ready(function() {
