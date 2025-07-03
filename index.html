@@ -42,6 +42,27 @@
         </ul>
       </nav>
     </header>
+    <script>
+    // Hamburger menu toggle
+    document.addEventListener('DOMContentLoaded', function() {
+      var toggle = document.querySelector('.navbar-toggle');
+      var menu = document.getElementById('navbar-menu');
+      toggle.addEventListener('click', function() {
+        menu.classList.toggle('open');
+        var expanded = toggle.getAttribute('aria-expanded') === 'true';
+        toggle.setAttribute('aria-expanded', !expanded);
+      });
+    });
+    // Logo shrink on scroll
+    window.addEventListener('scroll', function() {
+      var header = document.querySelector('header');
+      if (window.scrollY > 30) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
+    </script>
       <!--slider start-->
         <div class="hero-slider" tabindex="0" role="region" aria-label="Hero Image Carousel">
           <div class="hero-slider-container">
