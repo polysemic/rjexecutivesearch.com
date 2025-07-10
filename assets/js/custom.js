@@ -81,7 +81,7 @@ jQuery(function ($) {
            $menu.slideUp(200);
        }
     });
-
+/*
     $(document).ready(function() {
         var loader = $("body").DEPreLoad({
             OnStep: function(percent) {
@@ -124,6 +124,6 @@ jQuery(function ($) {
             }
         });
     });
-
+*/
 });
 
