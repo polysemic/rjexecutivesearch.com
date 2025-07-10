@@ -71,16 +71,7 @@ jQuery(function ($) {
        $('#'+target).slideToggle();
     });
     */
-    $('.navbar-toggle').on('click', function () {
-       var target = $(this).data('apply');
-       var $menu = $('#'+target);
-       if ($menu.hasClass('in')) {
-           $menu.removeClass('in').css('display', 'none');
-       } else {
-           $menu.addClass('in').css('display', 'block');
-       }
-    });
-/*
+    /*
     $(document).ready(function() {
         var loader = $("body").DEPreLoad({
             OnStep: function(percent) {
@@ -123,6 +114,6 @@ jQuery(function ($) {
             }
         });
     });
-*/
+    */
 });
 

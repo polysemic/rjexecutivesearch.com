@@ -1525,49 +1525,55 @@ footer .nav > li > a {
   margin-right: 10px;
 }
 @media (max-width: 768px) {
-  .navbar-nav {
-    margin: 0 -15px;
-    background-color: #fff;
-  }
-  .navbar-default .navbar-nav > li > a {
-    color: rgba(0, 0, 0, 0.8);
-  }
-  .navbar-default .navbar-nav > li > a:hover {
-    color: #000;
-  }
-  .navbar-default .navbar-nav > .active > a,
-  .navbar-default .navbar-nav > .active > a:focus,
-  .navbar-default .navbar-nav > .active > a:hover,
-  .navbar-default .navbar-nav > .open > a,
-  .navbar-default .navbar-nav > .open > a:focus,
-  .navbar-default .navbar-nav > .open > a:hover {
-    color: #000;
-    background-color: transparent;
-  }
-  .navbar-default .navbar-toggle .icon-bar {
-    background-color: #fff;
-  }
   .navbar-toggle {
-    border: 1px solid #040404;
+    display: block;
+    cursor: pointer;
+    background: #426fc4;
+    border: none;
+    padding: 10px 15px;
     border-radius: 2px;
+    margin: 10px 0;
   }
   .navbar-toggle .icon-bar {
     display: block;
-    height: 2px;
+    width: 22px;
+    height: 3px;
+    margin: 4px 0;
+    background: #fff;
     border-radius: 1px;
-    background: #000;
+    transition: all 0.3s;
   }
-  .navbar-default .navbar-toggle,
-  .navbar-default .navbar-toggle:focus,
-  .navbar-default .navbar-toggle:hover {
-    border-color: #426fc4;
-    background: #426fc4;
+  .nav-toggle {
+    display: none;
   }
-  .owl-arrows-slider .owl-controls .owl-next {
-    right: 0;
-  }
-  .owl-arrows-slider .owl-controls .owl-prev {
+  .collapse.navbar-collapse {
+    display: none;
+    width: 100%;
+    background: #fff;
+    position: absolute;
     left: 0;
+    top: 100%;
+    z-index: 999;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  }
+  .nav-toggle:checked ~ .collapse.navbar-collapse {
+    display: block;
+  }
+  .navbar-nav {
+    display: block;
+    text-align: left;
+    margin: 0;
+    padding: 0 10px;
+  }
+  .navbar-nav > li {
+    display: block;
+    margin: 0;
+  }
+  .navbar-nav > li > a {
+    color: #222;
+    padding: 12px 0;
+    border-bottom: 1px solid #eee;
+    display: block;
   }
 }
 div#ccm-highlighter {
