@@ -74,11 +74,10 @@ jQuery(function ($) {
     $('.navbar-toggle').on('click', function () {
        var target = $(this).data('apply');
        var $menu = $('#'+target);
-       $menu.toggleClass('in'); // Toggle Bootstrap's 'in' class for collapse
        if ($menu.hasClass('in')) {
-           $menu.slideDown(200);
+           $menu.removeClass('in').css('display', 'none');
        } else {
-           $menu.slideUp(200);
+           $menu.addClass('in').css('display', 'block');
        }
     });
 /*
