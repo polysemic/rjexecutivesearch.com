@@ -116,4 +116,5 @@ jQuery(function ($) {
     });
     */
 });
+// All menu toggle JS is now handled by Bootstrap. No custom nav JS needed.
 

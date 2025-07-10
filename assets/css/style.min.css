@@ -1525,6 +1525,9 @@ footer .nav > li > a {
   margin-right: 10px;
 }
 @media (max-width: 768px) {
+  .navbar {
+    position: relative;
+  }
   .navbar-toggle {
     display: block;
     cursor: pointer;
@@ -1533,6 +1536,8 @@ footer .nav > li > a {
     padding: 10px 15px;
     border-radius: 2px;
     margin: 10px 0;
+    z-index: 1001;
+    position: relative;
   }
   .navbar-toggle .icon-bar {
     display: block;
@@ -1553,10 +1558,10 @@ footer .nav > li > a {
     position: absolute;
     left: 0;
     top: 100%;
-    z-index: 999;
+    z-index: 1000;
     box-shadow: 0 2px 8px rgba(0,0,0,0.08);
   }
-  .nav-toggle:checked ~ .collapse.navbar-collapse {
+  .nav-toggle:checked + .collapse.navbar-collapse {
     display: block;
   }
   .navbar-nav {
