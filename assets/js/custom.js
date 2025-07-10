@@ -70,6 +70,17 @@ jQuery(function ($) {
        var target = $(this).data('apply');
        $('#'+target).slideToggle();
     });
+    */
+    $('.navbar-toggle').on('click', function () {
+       var target = $(this).data('apply');
+       var $menu = $('#'+target);
+       $menu.toggleClass('in'); // Toggle Bootstrap's 'in' class for collapse
+       if ($menu.hasClass('in')) {
+           $menu.slideDown(200);
+       } else {
+           $menu.slideUp(200);
+       }
+    });
 
     $(document).ready(function() {
         var loader = $("body").DEPreLoad({
@@ -113,7 +124,6 @@ jQuery(function ($) {
             }
         });
     });
-*/
 
 });
 

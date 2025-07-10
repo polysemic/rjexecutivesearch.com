@@ -1,7 +1,7 @@
 @font-face {
   font-family: "mjdps";
-  src: url(../fonts/mjdps.eot);
-  src: url(../fonts/mjdps.eot) format("embedded-opentype"), url(../fonts/mjdps.woff2) format("woff2"), url(../fonts/mjdps.woff) format("woff"), url(../fonts/mjdps.ttf) format("truetype"), url(../fonts/mjdps.svg) format("svg");
+  src: url(assets/fonts/mjdps.eot);
+  src: url(assets/fonts/mjdps.eot) format("embedded-opentype"), url(assets/fonts/mjdps.woff2) format("woff2"), url(assets/fonts/mjdps.woff) format("woff"), url(assets/fonts/mjdps.ttf) format("truetype"), url(assets/fonts/mjdps.svg) format("svg");
   font-weight: 400;
   font-style: normal;
 }
