@@ -1,6 +1,6 @@
 # Handshake Animation Project
 
-A smooth, performance-optimized scroll-triggered handshake animation built for MJ Direct Placement Services. This animation symbolizes the connection between employers and candidates.
+A smooth, performance-optimized scroll-triggered handshake animation built for RJ Executive Search. This animation symbolizes the connection between employers and candidates.
 
 ## Features
 
@@ -244,7 +244,7 @@ If the animation doesn't adapt to screen size:
 
 ## License
 
-Built for MJ Direct Placement Services. Feel free to adapt for your projects.
+Built for RJ Executive Search. Feel free to adapt for your projects.
 
 ## Support
 

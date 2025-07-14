@@ -1,7 +1,7 @@
 /**
  * Handshake Animation Controller
  * Performance-optimized scroll-triggered handshake animation
- * Built for MJ Direct Placement Services
+ * Built for RJ Executive Search
  */
 
 (function() {

@@ -1,5 +1,5 @@
 /* ============================================
-   MJ Direct Placement Services - Hero Slider
+   RJ Executive Search - Hero Slider
    Optional JavaScript for Enhanced Features
    ============================================ */
 

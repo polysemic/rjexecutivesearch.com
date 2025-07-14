@@ -1,4 +1,4 @@
-# MJ Direct Placement Services - Hero Slider
+# RJ Executive Search - Hero Slider
 
 A modern, mobile-first CSS-only slider with optional JavaScript enhancements for the hero section.
 
@@ -206,5 +206,5 @@ This slider replaces Revolution Slider with:
 
 ## License
 
-Part of MJ Direct Placement Services website.
+Part of RJ Executive Search website.
 Created for https://mjdirectplacementsrvs.com/
