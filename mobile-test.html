@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Mobile Navigation Test</title>
+    <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/style.min.css" rel="stylesheet">
+    <style>
+        /* Force mobile view for testing */
+        body {
+            max-width: 600px;
+            margin: 0 auto;
+            border: 2px solid #ccc;
+        }
+        .test-info {
+            background: #f0f0f0;
+            padding: 10px;
+            margin: 10px;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-info">
+        <strong>Mobile Navigation Test</strong><br>
+        This page simulates a mobile viewport (600px width) to test the hamburger menu functionality.
+    </div>
+    
+    <header>
+        <div class="col-sm-12 hidden-xs">
+            <a href="/"><img src="assets/images/rj-executive-search-logo.jpg" alt="RJ Executive Search Logo" class="img-responsive header-logo"></a>
+        </div>
+        <nav class="navbar navbar-default">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/">
+                        <img src="assets/images/rj-executive-search-logo.jpg" alt="RJ Executive Search Logo">
+                    </a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-navbar">
+                    <ul class="nav navbar-nav">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/who-we-are/">Who We Are</a></li>
+                        <li><a href="/recruiting-process/">Recruiting Process</a></li>
+                        <li><a href="/why-hire-recruiting-firm/">Why Hire a Recruiting Firm</a></li>
+                        <li><a href="/business-coaching/">Business Coaching</a></li>
+                        <li><a href="/our-assessments/">Our Assessments</a></li>
+                        <li><a href="/success-stories/">Success Stories</a></li>
+                        <li><a href="/contact-us/">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    
+    <div class="test-info">
+        <strong>Instructions:</strong><br>
+        1. You should see a hamburger menu button (three horizontal lines) in the navigation<br>
+        2. Click the hamburger button to toggle the mobile menu<br>
+        3. The menu should slide down/up when clicked<br>
+        4. Menu items should be stacked vertically when open
+    </div>
+    
+    <div style="height: 500px; background: #f9f9f9; margin: 20px; padding: 20px;">
+        <h2>Test Content Area</h2>
+        <p>This is test content to verify the mobile navigation doesn't interfere with page content.</p>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/custom.js"></script>
+</body>
+</html>

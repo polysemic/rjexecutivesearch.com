@@ -1548,9 +1548,6 @@ footer .nav > li > a {
     border-radius: 1px;
     transition: all 0.3s;
   }
-  .nav-toggle {
-    display: none;
-  }
   .collapse.navbar-collapse {
     display: none;
     width: 100%;
@@ -1561,7 +1558,7 @@ footer .nav > li > a {
     z-index: 1000;
     box-shadow: 0 2px 8px rgba(0,0,0,0.08);
   }
-  .nav-toggle:checked + .collapse.navbar-collapse {
+  .collapse.navbar-collapse.in {
     display: block;
   }
   .navbar-nav {
@@ -1579,6 +1576,15 @@ footer .nav > li > a {
     padding: 12px 0;
     border-bottom: 1px solid #eee;
     display: block;
+  }
+  .navbar-nav > li:last-child > a {
+    border-bottom: none;
+  }
+  .hidden-xs {
+    display: none !important;
+  }
+  .visible-xs {
+    display: block !important;
   }
 }
 div#ccm-highlighter {
