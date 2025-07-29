@@ -7,6 +7,7 @@ $(document).ready(function() {
     }
     
     // Mobile navigation toggle functionality
+    /*
     $('.navbar-toggle').on('click', function() {
         var target = $(this).attr('data-target');
         $(target).toggleClass('in');
@@ -16,6 +17,7 @@ $(document).ready(function() {
         var expanded = $(this).attr('aria-expanded') === 'true';
         $(this).attr('aria-expanded', !expanded);
     });
+    */
     
     // Close mobile menu when clicking on a link
     $('.navbar-nav a').on('click', function() {
